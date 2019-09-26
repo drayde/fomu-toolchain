@@ -13,8 +13,7 @@ install: skip
 script: ./build.sh
 deploy:
   provider: releases
-  api_key:
-    secure: "w/Ke1MTa3S97NEwcnsuqdSmH8Dvc+QE/JYpYjX+1UmB+rH/bTvlad3GZfRJN1sabah4ld+rINccAC9GPaYEz7dFuwaGKYg4RWgJ/i9gvytDJkDYASiHmc9JFDAivdkh/P3gA2zTH6STFzfzf7mPSpVbrQ5oxdZH98+USRBwB/7XUKxYNaPLUVO9HFlu1/LMHR7BZWozooSPtFaFxBNo+g8Uy22xs8yunndoprx3emGyWYD2qlSOJPV68/vNU9IL0FbrTDXMPtu3ALbavDFPGyt8Y8p43wxKrw4DIUKaIEV33r7uMOK67TGD5xggqSf7Jj+quDZIkgof+wRR4wrNeu9aXQMapMKgMiuFLlHJD2JvCpGZ/3yUCt/WaTXTnU2WhKZAJjiVG5WKO+RwkqKPypDqRgrBQCb8jqr5mK98CDM26jFRaMHHzlcmddPdby+hvhznZEUeIptx+S+bek2szd+Rxr4V/mLEeAeS6h9hIItEZkj6AhbaNRDL2N0/7P4mUIkrWVPq73FbddHF0NJASy1v4LZMge0tNMJF5duubURXyTjpUpPCwQWpxXfSs5l1KdkU00rdWiamJ/02Vavp04h1yTdjwoLaNtdyZQ7BY9DAKDfcEKRusY5fazuGjFw94Gi1UFUsEKaeu3ztyJmuLvHQgV7cW8XaOmRJRIQUgklQ="
+  api_key: $GH_TOKEN
   file:
     - output/*.tar.gz
     - output/*.zip
@@ -24,10 +23,10 @@ deploy:
   file_glob: true
   skip_cleanup: true
   on:
-    repo: im-tomu/fomu-toolchain
+    repo: drayde/fomu-toolchain
     all_branches: true
     tags: true
 branches:
   only:
     # Release tags
-    - /^v\d+\.\d+/
+    - /^test\d+/
